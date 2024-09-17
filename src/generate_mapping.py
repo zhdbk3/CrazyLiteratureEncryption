@@ -45,9 +45,9 @@ class MappingGenerator:
     def get_mapping(self) -> dict[str, str]:
         """获取映射表"""
         result = {}
-        for name in os.listdir('parts'):
+        for name in os.listdir('jieba/parts'):
             # 读取该词性的词库
-            with open(f'parts/{name}', encoding='utf-8') as f:
+            with open(f'jieba/parts/{name}', encoding='utf-8') as f:
                 keys = f.read().split('\n')
                 # 分块打乱
                 vals = self.shuffle(keys)

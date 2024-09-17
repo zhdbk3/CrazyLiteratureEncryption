@@ -45,7 +45,7 @@ jobs:
           file-description: 发疯文学加密器
           copyright: "Copyright MC着火的冰块. All rights reserved."
           no-deployment-flag: self-execution
-          include-data-dir: src/parts=parts,src/jieba=jieba
+          include-data-dir: src/jieba=jieba
 
       - name: 上传工件
         uses: actions/upload-artifact@v4

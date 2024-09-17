@@ -35,6 +35,6 @@ for flag in parts:
 
 # 写入文件
 for flag, words in parts.items():
-    with open(f'../src/parts/{flag}.txt', 'w', encoding='utf-8') as f:
+    with open(f'../src/jieba/parts/{flag}.txt', 'w', encoding='utf-8') as f:
         print(f'词性 {flag:^4} 共有 {len(words):>6} 个词')
         f.write('\n'.join([line[0] for line in words]))
