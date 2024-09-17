@@ -1,0 +1,55 @@
+name: 打包发疯文学加密器
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: '版本'
+        required: true
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ macos-latest, ubuntu-latest, windows-latest ]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: 签出存储库
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ github.event.inputs.py_version }} # Version range or exact version of a Python version to use, using SemVer's version range syntax
+          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+          cache: 'pip'
+          cache-dependency-path: |
+            **/requirements*.txt
+
+      - name: 安装依赖项
+        run: |
+          pip install -r requirements.txt
+
+      - name: 构建可执行文件
+        uses: Nuitka/Nuitka-Action@main
+        with:
+          nuitka-version: main
+          script-name: src/main.py
+          standalone: true
+          output-file: CrazyLiteratureEncryption
+          product-name: 发疯文学加密器
+          file-version: ${{ github.event.inputs.version }}
+          product-version: ${{ github.event.inputs.version }}
+          file-description: 发疯文学加密器
+          copyright: "Copyright MC着火的冰块. All rights reserved."
+          no-deployment-flag: self-execution
+          include-data-dir: src/parts=parts
+
+      - name: 上传工件
+        uses: actions/upload-artifact@v4
+        with:
+          name: CrazyLiteratureEncryption-v${{ github.event.inputs.version }}-${{ runner.os }}
+          path: |
+            build/main.dist/*
