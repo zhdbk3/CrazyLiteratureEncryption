@@ -48,7 +48,7 @@ jobs:
           file-version: ${{ github.event.inputs.version }}
           product-version: ${{ github.event.inputs.version }}
           copyright: "Copyright MC着火的冰块. All rights reserved."
-          include-package-data: jieba=dict.txt
+          include-package-data: jieba
           enable-plugins: pyqt5,multiprocessing
           disable-console: ${{ github.event.inputs.disable-console }}
           macos-create-app-bundle: ${{ github.event.inputs.disable-console }}
