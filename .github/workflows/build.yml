@@ -39,13 +39,15 @@ jobs:
           script-name: src/main.py
           standalone: true
           output-file: CrazyLiteratureEncryption
-          product-name: 发疯文学加密器
+          product-name: 发疯文学加密
+          file-description: 发疯文学加密
           file-version: ${{ github.event.inputs.version }}
           product-version: ${{ github.event.inputs.version }}
-          file-description: 发疯文学加密器
           copyright: "Copyright MC着火的冰块. All rights reserved."
-          no-deployment-flag: self-execution
-          include-data-dir: src/jieba=jieba
+          enable-plugins: pyqt5
+          disable-console: true
+          macos-create-app-bundle: true
+          include-package-data: true
 
       - name: 上传工件
         uses: actions/upload-artifact@v4

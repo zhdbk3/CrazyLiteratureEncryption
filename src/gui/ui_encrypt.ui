@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Encrypt</class>
+ <widget class="QWidget" name="Encrypt">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4">
+   <item row="0" column="0">
+    <widget class="TitleLabel" name="TitleLabel">
+     <property name="text">
+      <string>加密</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="1">
+      <widget class="SubtitleLabel" name="SubtitleLabel_2">
+       <property name="text">
+        <string>密文</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="SubtitleLabel" name="SubtitleLabel">
+       <property name="text">
+        <string>明文</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="PlainTextEdit" name="plainTextEdit_plain"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="PlainTextEdit" name="plainTextEdit_cipher">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="4">
+      <widget class="BodyLabel" name="BodyLabel_2">
+       <property name="text">
+        <string>偏移量</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="1">
+      <widget class="BodyLabel" name="bodyLabel_density">
+       <property name="text">
+        <string>-</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="BodyLabel" name="BodyLabel">
+       <property name="text">
+        <string>明文信息密度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="BodyLabel" name="BodyLabel_3">
+       <property name="text">
+        <string>bit/词</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="5">
+      <widget class="BodyLabel" name="bodyLabel_offset">
+       <property name="text">
+        <string>-</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="PrimaryPushButton" name="primaryPushButton_encrypt">
+       <property name="text">
+        <string>加密</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="IndeterminateProgressBar" name="indeterminateProgressBar">
+       <property name="textDirection">
+        <enum>QProgressBar::BottomToTop</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PushButton</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PrimaryPushButton</class>
+   <extends>PushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>BodyLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>SubtitleLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>TitleLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>IndeterminateProgressBar</class>
+   <extends>QProgressBar</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PlainTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
