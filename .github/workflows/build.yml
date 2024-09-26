@@ -17,6 +17,8 @@ jobs:
       matrix:
         os: [ macos-latest, ubuntu-latest, windows-latest ]
 
+      fail-fast: false
+
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -49,7 +51,7 @@ jobs:
           product-version: ${{ github.event.inputs.version }}
           copyright: "Copyright MC着火的冰块. All rights reserved."
           include-package-data: jieba
-          enable-plugins: pyqt5,multiprocessing
+          enable-plugins: pyqt5
           disable-console: ${{ github.event.inputs.disable-console }}
           macos-create-app-bundle: ${{ github.event.inputs.disable-console }}
 
