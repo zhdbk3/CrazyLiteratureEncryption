@@ -1,4 +1,4 @@
-name: 打包发疯文学加密器
+name: 打包发疯文学加密
 
 on:
   workflow_dispatch:
@@ -6,6 +6,10 @@ on:
       version:
         description: '版本'
         required: true
+      disable-console:
+        description: '禁用控制台'
+        required: true
+        default: true
 
 jobs:
   build:
@@ -44,10 +48,10 @@ jobs:
           file-version: ${{ github.event.inputs.version }}
           product-version: ${{ github.event.inputs.version }}
           copyright: "Copyright MC着火的冰块. All rights reserved."
-          enable-plugins: pyqt5
-          disable-console: true
-          macos-create-app-bundle: true
-          include-package-data: true
+          include-package-data: jieba=dict.txt
+          enable-plugins: pyqt5,multiprocessing
+          disable-console: ${{ github.event.inputs.disable-console }}
+          macos-create-app-bundle: ${{ github.event.inputs.disable-console }}
 
       - name: 上传工件
         uses: actions/upload-artifact@v4
