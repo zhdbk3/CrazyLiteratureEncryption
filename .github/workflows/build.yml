@@ -53,7 +53,6 @@ jobs:
           enable-plugins: pyqt5
           windows-console-mode: ${{ github.event.inputs.disable-console }}
           macos-create-app-bundle: true
-          static-libpython: yes
 
       - name: 上传工件
         uses: actions/upload-artifact@v4
