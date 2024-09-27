@@ -6,10 +6,9 @@ on:
       version:
         description: '版本'
         required: true
-      disable-console:
-        description: '禁用控制台'
+      windows-console-mode:
         required: true
-        default: true
+        default: disable
 
 jobs:
   build:
@@ -52,8 +51,9 @@ jobs:
           copyright: "Copyright MC着火的冰块. All rights reserved."
           include-package-data: jieba
           enable-plugins: pyqt5
-          disable-console: ${{ github.event.inputs.disable-console }}
-          macos-create-app-bundle: ${{ github.event.inputs.disable-console }}
+          windows-console-mode: ${{ github.event.inputs.disable-console }}
+          macos-create-app-bundle: true
+          static-libpython: yes
 
       - name: 上传工件
         uses: actions/upload-artifact@v4
