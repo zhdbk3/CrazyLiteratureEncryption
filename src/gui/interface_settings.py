@@ -24,7 +24,7 @@ class InterfaceSettings(QWidget, Ui_Settings):
 
     def init_ui(self) -> None:
         self.calc_seed_int()
-        self.bodyLabel_python_version.setText(sys.version)
+        self.bodyLabel_python_version.setText(f'Python {sys.version}')
         self.bodyLabel_jieba_version.setText(f'jieba {jieba.__version__}')
 
     def connect_signals_and_slots(self) -> None:

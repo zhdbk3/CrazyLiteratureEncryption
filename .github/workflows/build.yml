@@ -7,6 +7,7 @@ on:
         description: '版本'
         required: true
       windows-console-mode:
+        description: 'windows-console-mode'
         required: true
         default: disable
 
@@ -51,7 +52,7 @@ jobs:
           copyright: "Copyright MC着火的冰块. All rights reserved."
           include-package-data: jieba
           enable-plugins: pyqt5
-          windows-console-mode: ${{ github.event.inputs.disable-console }}
+          windows-console-mode: ${{ github.event.inputs.windows-console-mode }}
           macos-create-app-bundle: true
 
       - name: 上传工件
