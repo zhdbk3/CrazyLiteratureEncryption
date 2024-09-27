@@ -3,8 +3,10 @@
 #
 
 import hashlib
+import sys
 
 from PyQt5.QtWidgets import QWidget
+import jieba
 
 from .ui_settings import Ui_Settings
 
@@ -22,6 +24,8 @@ class InterfaceSettings(QWidget, Ui_Settings):
 
     def init_ui(self) -> None:
         self.calc_seed_int()
+        self.bodyLabel_python_version.setText(sys.version)
+        self.bodyLabel_jieba_version.setText(f'jieba {jieba.__version__}')
 
     def connect_signals_and_slots(self) -> None:
         # 字符串种子变化时计算整数种子
